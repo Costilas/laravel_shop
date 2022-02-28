@@ -1,0 +1,25 @@
+.header {
+    display: block;
+    padding: 30px 0;
+    background-color: black;
+    color: #ffffff;
+}
+
+.nav_block {
+    width: 100%;
+    max-width: 400px;
+}
+
+.nav {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav a:hover {
+    color: beige;
+}

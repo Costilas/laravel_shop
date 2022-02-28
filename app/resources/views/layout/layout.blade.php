@@ -12,11 +12,11 @@
     </head>
     <body>
        <div class="wrap">
-           @yield('header')
+           @include('layout.header')
 
            @yield('content')
 
-           @yield('footer')
+           @include('layout.footer')
        </div>
     </body>
 </html>

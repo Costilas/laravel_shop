@@ -7,7 +7,7 @@
             </div>
             <div class="nav_block">
                 <ul class="nav">
-                    <a href=""><li class="nav-item">Home</li></a>
+                    <a href="{{route('home')}}"><li class="nav-item">Home</li></a>
                     <a href=""><li class="nav-item">Home</li></a>
                     <a href=""><li class="nav-item">Home</li></a>
                     <a href=""><li class="nav-item">Home</li></a>

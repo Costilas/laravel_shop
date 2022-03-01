@@ -10,6 +10,6 @@ class Status extends Model
     use HasFactory;
 
     public function product(){
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 }

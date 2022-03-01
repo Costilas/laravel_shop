@@ -9,8 +9,19 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+        $title = 'Home';
+        $products = Product::with(['category', 'status'])->orderBy('id')->paginate(8);
 
-        return view('product.index');
+
+        return view('product.index', compact('title', 'products'));
+    }
+
+    public function show($slug)
+    {
+
+
+        return view('product.single');
     }
 }

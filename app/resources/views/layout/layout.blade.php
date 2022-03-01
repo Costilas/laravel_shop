@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <script src="{{'js/app.js'}}"></script>
 
-        <title>Document</title>
+        <title>@section('title')Laravel shop:: @show</title>
     </head>
     <body>
        <div class="wrap">

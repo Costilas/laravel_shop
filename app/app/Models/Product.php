@@ -28,11 +28,22 @@ class Product extends Model
 
     public function category()
     {
-       return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
-    public function status(){
-        return $this->hasOne(Status::class);
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function getImage()
+    {
+        if (!$this->img)
+        {
+            return asset('img/default.jpg');
+        }
+
+        return asset("storage/images/{$this->img}");
     }
 
 

@@ -21,7 +21,7 @@
                         <div class="text-center">
                             <a href="#" class="btn btn-primary "><i class="bi bi-basket3"></i> Add to cart</a>
                         </div>
-                        <div class="status"><i class="bi bi-check-lg status_icon"></i> В наличии </div>
+                        <div class="status"><i class="bi bi-check-lg status_icon_in_stock"></i> В наличии </div>
                     </div>
                 </div>
             </div>

@@ -34,9 +34,3 @@ services:
       - MYSQL_USER=sergey
       - MYSQL_PASSWORD=12345
       - MYSQL_DATABASE=laravel_shop
-
-  adminer:
-    image: adminer
-    restart: unless-stopped
-    ports:
-      - "8095:8080"

@@ -2,7 +2,7 @@
 
 
 @section('title')
-    @parent {{$title}}
+   {{-- @parent {{$title}}--}}
 @endsection
 
 @section('content')

@@ -10,7 +10,11 @@
                     <a href="{{route('home')}}"><li class="nav-item">Home</li></a>
                     <a href=""><li class="nav-item">Home</li></a>
                     <a href=""><li class="nav-item">Home</li></a>
-                    <a href=""><li class="nav-item">Home</li></a>
+                    <li class="nav-item">
+                        <button onclick="getCart('{{route('cart.show')}}')" type="button" class="btn btn-primary">
+                            Корзина <span class="badge badge-light">@if(session('cart_qty')) {{session('cart_qty')}} @else 0 @endif</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>

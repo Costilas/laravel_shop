@@ -44,9 +44,18 @@
                                     <i class="bi bi-envelope"></i> Сообщить о поступлении
                                 </a>
                             @else
-                                <a href="#" class="btn btn-primary">
-                                    <i class="bi bi-basket3"></i> В корзину
-                                </a>
+                                <form action="{{route('cart.add')}}" method="post" class="addtocart">
+                                    @csrf
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="qty" value="1">
+                                        <input type="hidden" name="product_id" value="{{$product->id}}">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary cart-addtocart" type="submit">
+                                                <i class="bi bi-basket3"></i> В корзину
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             @endif
                             <div class="status">
                                 <i class="{{$product->status->icon}}"></i> {{$product->status->title}}
@@ -56,7 +65,6 @@
                 @endforeach
             </div>
             {{$products->links()}}
-
         </div>
     </main>
 @endsection

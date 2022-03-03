@@ -9,7 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
 
-    public function addToCart(Product $product, $qty)
+    public function addToCart(Product $product, int $qty)
     {
         if (session()->has("cart.{$product->id}")) {
             session(["cart.{$product->id}.qty" => session("cart.{$product->id}.qty") + $qty]);
@@ -40,7 +40,6 @@ class Cart extends Model
 
     }
 
-
     public function deleteFromCart($id)
     {
         if (!session()->has("cart.{$id}")){
@@ -52,6 +51,15 @@ class Cart extends Model
         session(['cart_qty' => session('cart_qty')-$qtyMinus]);
         session(['cart_total' => session('cart_total')-$priceMinus]);
         session()->forget("cart.{$id}");
+
+        return true;
+    }
+
+    public function clearCart()
+    {
+        session()->forget('cart');
+        session()->forget('cart_qty');
+        session()->forget('cart_total');
 
         return true;
     }

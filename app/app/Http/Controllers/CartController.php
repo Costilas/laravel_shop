@@ -12,7 +12,7 @@ class CartController extends Controller
     {
         $request->validate([
             'product_id' => 'required|integer',
-            'qty' => 'required|integer'
+            'qty' => 'required|integer|regex:/^[1-9]+[0-9]?$/'
         ]);
 
         $data = $request->all();
@@ -32,6 +32,13 @@ class CartController extends Controller
     }
 
     public function show() {
+        return view('cart.cart-modal');
+    }
+
+    public function clear() {
+        $cart = new Cart();
+        $cart->clearCart();
+
         return view('cart.cart-modal');
     }
 }

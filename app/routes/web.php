@@ -17,5 +17,6 @@ Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->name
 Route::get('/product/{slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product.show');
 
 Route::post('/cart/add', [\App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
-Route::get('/cart/delete/{id}', [\App\Http\Controllers\CartController::class, 'delete'])->name('cart.delete');
 Route::get('/cart/show', [\App\Http\Controllers\CartController::class, 'show'])->name('cart.show');
+Route::get('/cart/delete/{id}', [\App\Http\Controllers\CartController::class, 'delete'])->name('cart.delete');
+Route::get('/cart/clear', [\App\Http\Controllers\CartController::class, 'clear'])->name('cart.clear');

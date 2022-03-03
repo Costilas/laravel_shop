@@ -18,6 +18,8 @@ class ProductController extends Controller
 
     public function show($slug)
     {
-        return view('product.single');
+        $product = Product::with('status', 'category')->where('slug', $slug)->firstOrFail();
+
+        return view('product.single', compact('product'));
     }
 }

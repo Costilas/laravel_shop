@@ -1,14 +1,18 @@
 @extends('layout.layout')
 
+
 @section('title')
-    @parent {{$title}}
+    @parent {{$category->title}}
 @endsection
 
 @section('content')
     <main>
         <div class="container">
+            <div class="m-auto text-center">
+                <h2>Категория: {{$category->title}}</h2>
+            </div>
             <div class="product_block">
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <div class="card">
                         <div class="promotion_block">
                             @if($product->sale)
@@ -25,11 +29,13 @@
                         </div>
                         <img src="{{$product->getImage()}}" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-between">
+
                             <h5 class="card-title">
                                 <a href="{{route('product.show', ['slug'=>$product->slug])}}">
                                     {{$product->title}}
                                 </a>
                             </h5>
+
                             <p class="card-text">{{$product->content}}</p>
                             <div class="d-flex justify-content-around">
                                 <p class="price">@priceFormat($product->price) руб.</p>
@@ -62,7 +68,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <p>Товаров в категории нет.</p>
+                @endforelse
             </div>
             {{$products->links()}}
         </div>

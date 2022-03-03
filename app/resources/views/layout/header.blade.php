@@ -8,8 +8,9 @@
             <div class="nav_block">
                 <ul class="nav">
                     <a href="{{route('home')}}"><li class="nav-item">Home</li></a>
-                    <a href=""><li class="nav-item">Home</li></a>
-                    <a href=""><li class="nav-item">Home</li></a>
+                    @foreach($categories as $category)
+                        <a href="{{route('category.show', ['slug' => $category->slug])}}"><li class="nav-item">{{$category->title}}</li></a>
+                    @endforeach
                     <li class="nav-item">
                         <button onclick="getCart('{{route('cart.show')}}')" type="button" class="btn btn-primary">
                             Корзина <span class="badge badge-light mini-cart-qty">{{session('cart_qty') ?? 0 }} </span>
@@ -20,4 +21,3 @@
         </div>
     </div>
 </header>
-

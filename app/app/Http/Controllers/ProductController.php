@@ -13,7 +13,6 @@ class ProductController extends Controller
     {
         $title = 'Home';
         $products = Product::with(['category', 'status'])->orderBy('id')->paginate(8);
-        //session()->flush();
         return view('product.index', compact('title', 'products'));
     }
 

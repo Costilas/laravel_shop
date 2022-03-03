@@ -39,4 +39,20 @@ class Cart extends Model
         }
 
     }
+
+
+    public function deleteFromCart($id)
+    {
+        if (!session()->has("cart.{$id}")){
+            return false;
+        }
+        $qtyMinus = session("cart.{$id}.qty");
+        $priceMinus = session("cart.{$id}.price")*$qtyMinus;
+
+        session(['cart_qty' => session('cart_qty')-$qtyMinus]);
+        session(['cart_total' => session('cart_total')-$priceMinus]);
+        session()->forget("cart.{$id}");
+
+        return true;
+    }
 }

@@ -23,9 +23,6 @@ $(function() {
 
     //Cart
     $('.addtocart').on('submit', function () {
-        /*console.log($(this).serialize());
-        console.log($(this).attr('action'));*/
-
         let form = $(this);
         $.ajax({
             url: form.attr('action'),
@@ -43,4 +40,20 @@ $(function() {
         return false;
     });
 
+    $('#cart-modal .modal-body').on('click', '.delete_item', function () {
+        $.ajax({
+            url: $(this).data('action'),
+            type: 'get',
+            success: function (result) {
+                showCart(result);
+            },
+            error: function (msg) {
+                alert('Delete Error!')
+            }
+        });
+    });
+
+
 });
+
+

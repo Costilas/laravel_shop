@@ -24,6 +24,12 @@ class CartController extends Controller
         return view('cart.cart-modal');
     }
 
+    public function delete($id) {
+        $cart = new Cart();
+        $cart->deleteFromCart($id);
+
+        return $this->show();
+    }
 
     public function show() {
         return view('cart.cart-modal');

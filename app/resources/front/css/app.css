@@ -4,6 +4,7 @@
 @import "footer/footer.css";
 @import "products/pagination.css";
 @import "products/card.css";
+@import "cart/cart.css";
 
 .wrap {
     position: relative;

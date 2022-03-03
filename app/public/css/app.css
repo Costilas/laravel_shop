@@ -119,6 +119,10 @@ footer {
     color: orange;
 }
 
+.delete_item {
+    cursor: pointer;
+}
+
 .wrap {
     position: relative;
     padding-bottom: 200px;

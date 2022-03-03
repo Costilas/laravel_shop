@@ -34,9 +34,9 @@
 
                             <p class="card-text">{{$product->content}}</p>
                             <div class="d-flex justify-content-around">
-                                <p class="price">{{$product->price}} руб.</p>
+                                <p class="price">@priceFormat($product->price) руб.</p>
                                 @if($product->old_price)
-                                    <p class="price"><small><del>{{$product->old_price}} руб.</del></small></p>
+                                    <p class="price"><small><del>@priceFormat($product->old_price) руб.</del></small></p>
                                 @endif
                             </div>
                             @if($product->status->id === 2)

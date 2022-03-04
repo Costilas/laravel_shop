@@ -19,7 +19,7 @@
                     <td><a href="{{route('product.show', ['slug'=>$product['slug']])}}">{{$product['title']}}</a></td>
                     <td>@priceFormat($product['price']) руб.</td>
                     <td>{{$product['qty']}}</td>
-                    <td><span class="text-danger delete_item" data-action="{{route('cart.delete', ['id' => $product['id']])}}">x</span></td>
+                    <td><span class="text-danger delete_item" data-action="{{route('cart.delete', ['id' => $product['product_id']])}}">x</span></td>
                 </tr>
             @endforeach
             <tr>

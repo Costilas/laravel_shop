@@ -29,7 +29,12 @@ function clearCart(action) {
         url: action,
         type: 'get',
         success: function (result) {
-            showCart(result);
+            let now_location = document.location.pathname;
+            if(now_location == '/order/checkout') {
+                location = '/order/checkout';
+            }else {
+                showCart(result);
+            }
         },
         error: function (msg) {
             alert('Clear Error!')
@@ -57,12 +62,18 @@ $(function () {
         return false;
     });
     //delete cart item
-    $('#cart-modal .modal-body').on('click', '.delete_item', function () {
+    $('#cart-modal .modal-body, .cart-table').on('click', '.delete_item', function () {
         $.ajax({
             url: $(this).data('action'),
             type: 'get',
             success: function (result) {
-                showCart(result);
+                let now_location = document.location.pathname;
+                    console.log(now_location);
+                if(now_location == '/order/checkout') {
+                    location = '/order/checkout';
+                }else {
+                    showCart(result);
+                }
             },
             error: function (msg) {
                 alert('Delete Error!')

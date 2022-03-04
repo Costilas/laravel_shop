@@ -22,3 +22,5 @@ Route::get('/cart/delete/{id}', [\App\Http\Controllers\CartController::class, 'd
 Route::get('/cart/clear', [\App\Http\Controllers\CartController::class, 'clear'])->name('cart.clear');
 
 Route::get('/category/{slug}', [\App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
+
+Route::match(['get', 'post'], '/order/checkout', [\App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');

@@ -35,9 +35,9 @@
                 <button type="button" onclick="clearCart('{{route('cart.clear')}}')"
                         class="btn btn-danger btn-cart @if(empty(session('cart'))) d-none @endif">Очистить корзину
                 </button>
-                <button type="button" class="btn btn-primary btn-cart @if(empty(session('cart'))) d-none @endif">
+                <a href="{{route('cart.checkout')}}" class="btn btn-primary btn-cart @if(empty(session('cart'))) d-none @endif">
                     Оформить заказ
-                </button>
+                </a>
             </div>
         </div>
     </div>

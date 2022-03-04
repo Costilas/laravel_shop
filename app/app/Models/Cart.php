@@ -16,7 +16,7 @@ class Cart extends Model
         } else {
             session([
                 "cart.{$product->id}" => [
-                    'id' => $product->id,
+                    'product_id' => $product->id,
                     'title' => $product->title,
                     'slug' => $product->slug,
                     'price' => $product->price,

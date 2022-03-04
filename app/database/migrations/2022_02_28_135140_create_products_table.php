@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('category_id')->unsigned();
             $table->tinyInteger('status_id')->unsigned();
             $table->string('img')->nullable();
-            $table->double('price')->unsigned()->default(0);
-            $table->double('old_price')->unsigned()->default(0);
+            $table->double('price')->default(0);
+            $table->double('old_price')->default(0);
             $table->tinyInteger('hit')->unsigned()->default(0);
             $table->tinyInteger('sale')->unsigned()->default(0);
             $table->timestamps();
